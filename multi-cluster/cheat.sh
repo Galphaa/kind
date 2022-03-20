@@ -1,7 +1,9 @@
 kind create cluster --config=kind-config.yaml
 
 #creating cluster with specific version
-kind create cluster --config=kind-config.yaml --image=kindest/node:v1.23.3
+kind create cluster --name=cluster1 --config=kind-cluster1.yaml --image=kindest/node:v1.23.3
+kind create cluster --name=cluster2 --config=kind-cluster2.yaml --image=kindest/node:v1.23.3
+
 
 #installing Weavework CNI
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
