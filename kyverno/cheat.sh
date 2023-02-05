@@ -4,8 +4,7 @@ kind create cluster --config=kind-config.yaml
 kind create cluster --config=kind-config.yaml --image=kindest/node:v1.21.10
 
 #installing Weavework CNI
-kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
 
 #installing Cilium CNI
 helm repo add cilium https://helm.cilium.io/ #adding cilium helm repo if needed
