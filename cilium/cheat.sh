@@ -6,9 +6,9 @@ kind create cluster --config=kind-config.yaml --image=kindest/node:v1.21.10
 
 #installing Cilium CNI
 helm repo add cilium https://helm.cilium.io/ #adding cilium helm repo if needed
-docker pull quay.io/cilium/cilium:v1.12.0
-kind load docker-image quay.io/cilium/cilium:v1.12.0
-helm install cilium cilium/cilium --version 1.12.0 \
+docker pull quay.io/cilium/cilium:v1.12.6
+kind load docker-image quay.io/cilium/cilium:v1.12.6
+helm install cilium cilium/cilium --version 1.12.6 \
    --namespace kube-system \
    --set nodeinit.enabled=true \
    --set kubeProxyReplacement=partial \
